@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Domain.Employee>
+@{
+    ViewBag.Title = "KQTimKiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>KQTimKiem</h2>
+@using (Html.BeginForm("KQTimKiem", "Timkiem"))
+    //name phai trung voi tên biến chúng ta đặt
+{
+    <input type="text" name ="sTuKhoa" placeholder="Nhập tên sp cần tìm...." value ="" />
+    <input type="submit"  value="Tìm kiếm" />
+}
+@foreach(var item in Model)
+{
+    <p>@item.Name</p>
+}

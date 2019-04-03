@@ -1,0 +1,11 @@
+﻿@model PagedList.IPagedList<Domain.Employee>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh mục khách hàng</h2>
+<div id="employee_area">
+    @{ Html.RenderAction("GetPaging", "Employee", new { page = 1 });}
+</div>

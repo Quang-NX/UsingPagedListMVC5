@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@Ajax.ActionLink("Click load Ajax","LoadAjax",new AjaxOptions {
+    HttpMethod="GET",UpdateTargetId= "result",InsertionMode=InsertionMode.InsertAfter
+})
+@*<div id="result" style="height:150px;">
+
+</div>*@
+@*Load ajax theo cách thứ 2*@
+
+@using (Ajax.BeginForm("LoadAjaxBGF", new AjaxOptions { HttpMethod = "Post",
+    UpdateTargetId = "result", InsertionMode = InsertionMode.InsertAfter
+}))
+{
+<input name="txt1" />
+<input type="submit" value="Submit" />
+}
+
+<div id="result" style="height:150px;">
+
+</div>
